@@ -127,3 +127,14 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#REST commands and private stuff
+rest.txt
+*.json
+test
+*.html
+*.js
+secrets_private.yaml
+reqs_private.py
+*.ipynb
+.DS_store
