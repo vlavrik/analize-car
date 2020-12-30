@@ -20,21 +20,21 @@ telemetry = get_telemetry(flespi_token=TOKEN, device_number=DEVICE)
 
 app.layout = html.Div([
     html.Article(children=[
-        html.Img(id='placeholder',src="https://static01.nyt.com/images/2019/12/23/business/23bmw1/23bmw1-mobileMasterAt3x.jpg", className="country__img"),
+        html.Img(id='placeholder',src="https://static01.nyt.com/images/2019/12/23/business/23bmw1/23bmw1-mobileMasterAt3x.jpg", className="car__img"),
         html.Div(children=[html.H2("BMW 316i"),
-        html.P(id="km", children=[html.Span("🏎"), ""], className="country__row"),
-        html.P(id="fuel",children=[html.Span("⛽️"), ""], className="country__row"),
-        html.P(id="temp",children=[html.Span("🌡"), ""], className="country__row"),
-        html.P(id="sat",children=[html.Span("🛰"), ""], className="country__row"),
+        html.P(id="km", children=[html.Span("🏎"), ""], className="car__row"),
+        html.P(id="fuel",children=[html.Span("⛽️"), ""], className="car__row"),
+        html.P(id="temp",children=[html.Span("🌡"), ""], className="car__row"),
+        html.P(id="sat",children=[html.Span("🛰"), ""], className="car__row"),
         
 
-        ], className="country__data")
+        ], className="car__data")
 
 
 
 
 
-    ], className="country")
+    ], className="car")
     
     
     
