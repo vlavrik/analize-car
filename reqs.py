@@ -2,16 +2,10 @@
 
 
 from datetime import datetime
-import yaml
 import requests
 import pytz
 
-with open("secrets_private.yaml", 'r') as f:
-    secrets_loaded = yaml.safe_load(f)
 
-CREDENTIALS = secrets_loaded['credentials']
-DEVICE = CREDENTIALS['device_number']
-TOKEN = CREDENTIALS['flespi_token']
 
 def get_telemetry(flespi_token, device_number):
     """Python wrapper on flesp API to get the latest telemetry json.
@@ -57,7 +51,3 @@ def convert_unix_ts(timestamp, timezone = "Europe/Berlin"):
     date = datetime.fromtimestamp(timestamp, timezone)
 
     return date.strftime('%Y-%m-%d %H:%M:%S')
-
-
-if __name__ == "__main__":
-    print(get_telemetry(flespi_token=TOKEN, device_number=DEVICE))

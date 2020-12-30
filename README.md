@@ -1,1 +1,3 @@
-# analize-car
+# Analize car
+
+The plotly dash based app.

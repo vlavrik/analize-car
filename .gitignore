@@ -138,4 +138,4 @@ secrets_private.yaml
 reqs_private.py
 *.ipynb
 .DS_store
-*.css
+style.css
