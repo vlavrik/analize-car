@@ -1,4 +1,4 @@
-"""Utoloties to work with an API of flespi platform"""
+"""Utilities to work with an API of flespi platform"""
 
 
 from datetime import datetime
