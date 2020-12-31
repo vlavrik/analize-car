@@ -26,6 +26,8 @@ app.layout = html.Div([
         html.P(id="fuel",children=[html.Span("⛽️"), ""], className="car__row"),
         html.P(id="temp",children=[html.Span("🌡"), ""], className="car__row"),
         html.P(id="sat",children=[html.Span("🛰"), ""], className="car__row"),
+        html.P(id="updt",children=[html.Span("⏱"), ""], className="car__row")
+
         
 
         ], className="car__data")
@@ -49,15 +51,19 @@ app.layout = html.Div([
 Output(component_id='fuel', component_property='children'),
 Output(component_id='temp', component_property='children'),
 Output(component_id='sat', component_property='children'),
+Output(component_id='updt', component_property='children'),
+
 Input(component_id='placeholder', component_property='children'))
 
 def update_output_div(test):
+    date = convert_unix_ts(timestamp=telemetry["position.satellites"]["ts"])
     first_comp = [{'props': {'children': '🏎'}, 'type': 'Span', 'namespace': 'dash_html_components'}, '{} km'.format(int(telemetry["vehicle.mileage"]["value"]))]
     second_comp = [{'props': {'children': '⛽️'}, 'type': 'Span', 'namespace': 'dash_html_components'}, '{} l.'.format(telemetry["can.fuel.level"]["value"]*60/100)]
     third_comp = [{'props': {'children': '🌡'}, 'type': 'Span', 'namespace': 'dash_html_components'}, '{} ℃'.format(telemetry["can.ambient.air.temperature"]["value"])]
     fourth_comp = [{'props': {'children': '🛰'}, 'type': 'Span', 'namespace': 'dash_html_components'}, '{}'.format(telemetry["position.satellites"]["value"])]
+    firth_comp = [{'props': {'children': '⏱'}, 'type': 'Span', 'namespace': 'dash_html_components'}, '{}'.format(date)]
 
-    return first_comp, second_comp, third_comp, fourth_comp
+    return first_comp, second_comp, third_comp, fourth_comp, firth_comp
 
 if __name__ == '__main__':
     app.run_server(debug=False)
