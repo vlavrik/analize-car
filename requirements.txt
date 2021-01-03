@@ -1,3 +1,4 @@
 dash
 PyYAML
 requests
+flespi-gateway

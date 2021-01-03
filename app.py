@@ -58,7 +58,7 @@ Input(component_id='placeholder', component_property='children'))
 def update_output_div(test):
     date = convert_unix_ts(timestamp=telemetry["position.satellites"]["ts"])
     first_comp = [{'props': {'children': '🏎'}, 'type': 'Span', 'namespace': 'dash_html_components'}, '{} km'.format(int(telemetry["vehicle.mileage"]["value"]))]
-    second_comp = [{'props': {'children': '⛽️'}, 'type': 'Span', 'namespace': 'dash_html_components'}, '{} l.'.format(telemetry["can.fuel.level"]["value"]*60/100)]
+    second_comp = [{'props': {'children': '⛽️'}, 'type': 'Span', 'namespace': 'dash_html_components'}, '{}l / 60.0l'.format(telemetry["can.fuel.level"]["value"]*60/100)]
     third_comp = [{'props': {'children': '🌡'}, 'type': 'Span', 'namespace': 'dash_html_components'}, '{} ℃'.format(telemetry["can.ambient.air.temperature"]["value"])]
     fourth_comp = [{'props': {'children': '🛰'}, 'type': 'Span', 'namespace': 'dash_html_components'}, '{}'.format(telemetry["position.satellites"]["value"])]
     firth_comp = [{'props': {'children': '⏱'}, 'type': 'Span', 'namespace': 'dash_html_components'}, '{}'.format(date)]
